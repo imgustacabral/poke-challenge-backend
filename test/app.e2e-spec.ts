@@ -15,10 +15,13 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+  it('should be able to (GET) a existing pokemon', () => {
+    const pokemonName = 'pikachu';
+    return request(app.getHttpServer()).get(`/${pokemonName}`).expect(200);
+  });
+
+  it('should not be able to (GET) a inexisting pokemon', () => {
+    const pokemonName = 'dnasojida';
+    return request(app.getHttpServer()).get(`/${pokemonName}`).expect(404);
   });
 });
