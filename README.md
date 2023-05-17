@@ -25,6 +25,7 @@ docker build -t poke-challenge .
 ```
 
 Rodar o container
+O padrão está em modo de produção, para alterar basta ir no docker-compose.yml e mudar o command para `npm run start:prod`
 
 ```bash
 docker run -p 3000:3000 poke-challenge 
