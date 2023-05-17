@@ -1,0 +1,7 @@
+version: '3'
+services:
+  pokeapi-challenge:
+    image: pokeapi
+    ports:
+      - "3000:3000"
+    command: npm run start:prod
