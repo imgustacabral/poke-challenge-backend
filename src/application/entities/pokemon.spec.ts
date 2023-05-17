@@ -1,4 +1,4 @@
-import { Pokemon } from './pokemon.entity';
+import { Pokemon } from './entities/pokemon.entity';
 
 describe('Pokemon Entity', () => {
   it('should be able to create a pokemon', () => {
