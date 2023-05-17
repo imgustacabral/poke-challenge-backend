@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { FindPokemon } from 'src/application/use-cases/find-pokemon-abilities';
+import { FindPokemon } from '../../../application/use-cases/find-pokemon-abilities';
 import { PokemonViewModel } from '../view-model/pokemon-view-model';
 
 @Controller('/')

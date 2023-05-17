@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { PokemonRepository } from 'src/application/repositories/pokemon.repository';
+import { PokemonRepository } from '../../application/repositories/pokemon.repository';
 import { PokeApiService } from '../pokeapi/pokeapi.service';
 import { FindPokemonController } from './controllers/find-pokemon-abilities.controller';
-import { FindPokemon } from 'src/application/use-cases/find-pokemon-abilities';
+import { FindPokemon } from '../../application/use-cases/find-pokemon-abilities';
 
 @Module({
   imports: [],
