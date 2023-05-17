@@ -17,13 +17,15 @@ export class FindPokemon {
     const pokemon = new Pokemon({
       name: request.name,
     });
-    const { abilities } = await this.pokemonRepository.find(pokemon.name);
 
-    pokemon.abilities = abilities;
+    const { abilities } = await this.pokemonRepository.find(pokemon.name);
 
     if (!abilities) {
       throw new PokemonNotFound();
     }
+
+    pokemon.abilities = abilities;
+
     return pokemon;
   }
 }
