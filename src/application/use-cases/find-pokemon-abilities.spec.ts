@@ -12,8 +12,6 @@ describe('find pokemon', () => {
       name,
     });
 
-    console.log(pokemon);
-
     expect(pokemon.abilities[0]).toBe('teste');
   });
 });
