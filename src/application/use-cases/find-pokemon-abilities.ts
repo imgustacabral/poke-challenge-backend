@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Pokemon } from '../entities/pokemon.entity';
 import { PokemonRepository } from '../repositories/pokemon.repository';
+import { PokemonNotFound } from './errors/pokemon-not-found';
 
 interface FindPokemonRequest {
   name: string;
@@ -19,6 +20,10 @@ export class FindPokemon {
     const { abilities } = await this.pokemonRepository.find(pokemon.name);
 
     pokemon.abilities = abilities;
+
+    if (!abilities) {
+      throw new PokemonNotFound();
+    }
     return pokemon;
   }
 }
